@@ -3,13 +3,13 @@ int pins[]= {2, 3, 4};
 int notes[] = { 262, 294, 330 };
 
 void setup() {
-   for(int i =0; i < sizeof(pins) ; i ++) {
+   for(int i =0; i <sizeof(pins)/sizeof(int) ; i ++) {
       pinMode(pins[i], INPUT);
    }
 }
 
 void loop() {
-  for(int i = 0; i< sizeof(pins); i++){
+  for(int i = 0; i< sizeof(pins)/sizeof(int); i++){
     if(digitalRead(pins[i]) == HIGH) {
         tone(8, notes[i], 100);
         delay(100);
